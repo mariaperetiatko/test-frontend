@@ -1,0 +1,60 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page">Product creation</li>
+  </ol>
+</nav>
+<div class="form-group">
+  <label>Name:</label>
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="product.name"
+    placeholder="name"
+  />
+</div>
+<div class="form-group">
+  <label for="cost">Cost:</label>
+  <input
+    class="form-control"
+    type="number"
+    min="0.1"
+    step="0.01"
+    [(ngModel)]="product.cost"
+    placeholder="number"
+  />
+</div>
+<div class="form-group">
+  <label>Caloric value:</label>
+  <input
+    class="form-control"
+    type="number"
+    min="0.1"
+    step="0.01"
+    [(ngModel)]="product.caloricValue"
+    placeholder="number"
+  />
+</div>
+<div class="form-group">
+  <label>Product type:</label>
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="product.productType"
+    placeholder="product type"
+  />
+</div>
+<div class="form-group">
+  <label>Product description:</label>
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="product.productDescription"
+    placeholder="description"
+  />
+</div>
+<button type="button" class="btn btn-success" (click)="createProduct()">
+  Create
+</button>
+<button type="button" class="btn btn-primary" (click)="goBack()">
+  Go back
+</button>

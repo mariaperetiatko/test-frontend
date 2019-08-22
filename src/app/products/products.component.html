@@ -1,0 +1,36 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page">Products</li>
+  </ol>
+</nav>
+<h2>My Products</h2>
+
+<div class="container" *ngFor="let product of products">
+  <div class="row bordered">
+    <div class="col">
+      {{ product.id }}
+    </div>
+    <div class="col-6">
+      <a routerLink="/detail/{{ product.id }}">
+        {{ product.name }}
+      </a>
+    </div>
+    <div class="col">
+      <button
+        type="button"
+        title="delete product"
+        (click)="deleteProduct(product)"
+        class="btn btn-danger"
+      >
+        Delete
+      </button>
+    </div>
+    <div class="col">
+      <a routerLink="/detail/{{ product.id }}">
+        <button type="button" title="details" class="btn btn-primary">
+          Details
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

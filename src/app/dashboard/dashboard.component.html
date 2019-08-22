@@ -1,0 +1,20 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page">Dashboard</li>
+  </ol>
+</nav>
+<div class="grid grid-pad">
+  <a
+    *ngFor="let product of products"
+    class="col-1-4"
+    routerLink="/detail/{{ product.id }}"
+  >
+    <div class="module product">
+      <h4>{{ product.name }}</h4>
+    </div>
+  </a>
+</div>
+<br /><br /><br /><br />
+
+<hr />
+<app-product-search></app-product-search>

@@ -1,0 +1,49 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page">Product details</li>
+  </ol>
+</nav>
+<div *ngIf="product">
+  <h2>{{ product.name | uppercase }} Details</h2>
+  <div class="form-group">
+    <label>Name:</label>
+    <input
+      class="form-control"
+      type="text"
+      [(ngModel)]="product.name"
+      placeholder="name"
+    />
+  </div>
+  <div class="form-group">
+    <label>Cost:</label>
+    <input class="form-control" [(ngModel)]="product.cost" placeholder="name" />
+  </div>
+  <div class="form-group">
+    <label>Caloric value:</label>
+    <input
+      class="form-control"
+      [(ngModel)]="product.caloricValue"
+      placeholder="name"
+    />
+  </div>
+  <div class="form-group">
+    <label>Product type:</label>
+    <input
+      class="form-control"
+      [(ngModel)]="product.productType"
+      placeholder="product type"
+    />
+  </div>
+  <div class="form-group">
+    <label>Product description:</label>
+    <input
+      class="form-control"
+      [(ngModel)]="product.productDescription"
+      placeholder="description"
+    />
+  </div>
+</div>
+<button type="button" class="btn btn-success" (click)="save()">Save</button>
+<button type="button" class="btn btn-primary" (click)="goBack()">
+  Go back
+</button>
