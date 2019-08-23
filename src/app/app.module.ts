@@ -1,5 +1,6 @@
 import { ProductService } from './product.service';
 import { MessageService } from './message.service';
+import { CategoryService } from './category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +37,7 @@ import { ProductSearchComponent } from './product-search/product-search.componen
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ ProductService, MessageService ],
+  providers: [ ProductService, MessageService, CategoryService ],
 
   bootstrap: [AppComponent]
 })

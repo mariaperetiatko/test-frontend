@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
+import { Category } from '../category';
 import { Location } from '@angular/common';
 import { ProductService } from '../product.service';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-product-create',
@@ -11,10 +13,17 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
 
   product: Product = new Product();
+  categories: Category[] = [];
 
-  constructor(private productService: ProductService, private location: Location) {}
+  constructor(
+    private productService: ProductService,
+    private categoryService: CategoryService,
+    private location: Location
+    ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCategories();
+  }
 
   goBack(): void {
     this.location.back();
@@ -34,5 +43,10 @@ export class ProductCreateComponent implements OnInit {
     const isValid = this.product.name !== '' && this.product.cost >= 0.1
       && this.product.caloricValue >= 0.1;
     return isValid;
+  }
+
+  getCategories(): void {
+    this.categoryService.getCategories()
+    .subscribe(categories => this.categories = categories);
   }
 }

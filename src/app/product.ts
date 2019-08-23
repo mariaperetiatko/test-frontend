@@ -1,16 +1,19 @@
+import { Category } from './category';
+
 export class Product {
   id: number;
   name: string;
   cost: number;
   caloricValue: number;
-  productType: string;
   productDescription: string;
+  categoryId: number;
+  category: Category;
 
   constructor() {
     this.name = '';
     this.cost = 10;
     this.caloricValue = 100;
-    this.productType = '';
     this.productDescription = '';
+    this.categoryId = 1;
   }
 }
